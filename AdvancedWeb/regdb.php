@@ -18,7 +18,7 @@
             $query = "INSERT INTO customers (firstname, lastname, dob, email, password) VALUES ('".$firstname."', '".$lastname."', '".$dob."', '".$email."' , '".$password."')";
             echo $query;
             $result = mysqli_query($conn, $query);
-        
+
             if(!$result) {
                 echo "<p>Something is wrong with ", $query, "</p>";
             }
@@ -27,5 +27,5 @@
             }
     }
  $conn -> close();
- 
+
 ?>

@@ -8,12 +8,11 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
       <style>
-        /* Remove the navbar's default rounded borders and increase the bottom margin */  
+        /* Remove the navbar's default rounded borders and increase the bottom margin */ 
         .navbar {
           margin-bottom: 50px;
           border-radius: 0;
         }
-        
 
         /* Remove the jumbotron's default bottom margin */ 
          .jumbotron {
@@ -61,7 +60,7 @@
           <ul class="nav navbar-nav navbar-right">
               <!-----------------Search function----------------->
               <li class="search-container">
-                <a><form action="/search.php">
+                <a><form action="/action_page.php">
                   <input type="text" placeholder="Search.." name="search">
                   <button type="submit" class="btn btn-outline-light btn-sm"><span class="glyphicon glyphicon-search"></span></button>
                    </form>
@@ -121,122 +120,61 @@
         </div>
       </div>
     </nav>
-<!------------------------------Container---------------------------->
-    <div class="container">    
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
-        </div>
-        <div class="col-sm-4"> 
-          <div class="panel panel-danger">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
-        </div>
-        <div class="col-sm-4"> 
-          <div class="panel panel-success">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
-        </div>
-      </div>
-    </div><br>
+<!------------------------------Container----------------------------->
+<div class="container">
+<h1><?php echo "Check Out"; ?></h1>
+<form action="welcome.php" method="post">
+    <div class="form-group">
+      <label for="title"> Title:</label>
+        <input type="radio" id="title" name="title" value="Mr">Mr
+        <input type="radio" id="title" name="title" value="Mrs">Mrs
+        <input type="radio" id="title" name="title" value="Ms">Ms
+        <input type="radio" id="title" name="title" value="Miss">Miss
+    </div>
+    <div class="form-group">
+      <label for="firstname"> First Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="First name" name="firstname">
+    </div>
+    <div class="form-group">
+      <label for="lastname"> Last Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Last name" name="lastname">
+    </div>
+    <div class="form-group">
+      <label for="num">Mobile number:</label>
+      <input type="text" class="form-control" id="num" placeholder="Enter contact number" name="num">
+    </div>
+    <div class="form-group">
+    <label for="address1">Address line 1:</label>
+      <input type="text" class="form-control" id="address1" placeholder="123 st / Unit 7" name="address1">
+    </div>
+    <div class="form-group">
+    <label for="address2">Address line 2:</label>
+      <input type="text" class="form-control" id="address2" placeholder="Floor number" name="address2">
+    </div>
+    <div class="form-group">
+    <label for="suburb">Suburb:</label>
+      <input type="text" class="form-control" id="suburb" placeholder="Suburb" name="suburb">
+    </div>
+    <div class="form-group">
+    <label for="state">State:</label>
+      <input type="text" class="form-control" id="state" placeholder="State" name="state">
+    </div>
+    <div class="form-group">
+    <label for="postcode">Postcode:</label>
+      <input type="text" class="form-control" id="postcode" placeholder="e.g 3000" name="state">
+    </div>
+    <button type="next1" class="btn btn-default">Next</button><br><br><br>
+  </form>      
+</div>
 
-    <div class="container">    
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
-        </div>
-        <div class="col-sm-4"> 
-          <div class="panel panel-primary">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
-        </div>
-        <div class="col-sm-4"> 
-          <div class="panel panel-primary">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
-        </div>
-      </div>
-    </div><br><br>
+    
+<footer class="container-fluid text-center">
+  <p>Online Store Copyright</p>  
+  <form class="form-inline">Get deals:
+    <input type="email" class="form-control" size="50" placeholder="Email Address">
+    <button type="button" class="btn btn-danger">Sign Up</button>
+  </form>
+</footer>
 
-
-        <div class="container">    
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
-        </div>
-        <div class="col-sm-4"> 
-          <div class="panel panel-primary">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
-        </div>
-        <div class="col-sm-4"> 
-          <div class="panel panel-primary">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
-        </div>
-      </div>
-    </div><br><br>
-
-
-        <div class="container">    
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
-        </div>
-        <div class="col-sm-4"> 
-          <div class="panel panel-primary">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
-        </div>
-        <div class="col-sm-4"> 
-          <div class="panel panel-primary">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
-        </div>
-      </div>
-    </div><br><br>
-
-
-
-    <footer class="container-fluid text-center">
-      <p>Online Store Copyright</p>  
-      <form class="form-inline">Get deals:
-        <input type="email" class="form-control" size="50" placeholder="Email Address">
-        <button type="button" class="btn btn-danger">Sign Up</button>
-      </form>
-    </footer>
-
-    </body>
-    </html>
+</body>
+</html>
