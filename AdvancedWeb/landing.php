@@ -1,14 +1,3 @@
-<?php
-// Initialize the session
-session_start();
- 
-// Check if the user is logged in, if not then redirect him to landing page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: landing.php");
-    exit;
-}
-?>
- 
 <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -53,12 +42,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="welcome.php" >GoSmart</a>
+        <a class="navbar-brand" href="#" >GoSmart</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li><a href="welcome.php">Home</a></li>
-          <li class="dropdown"><a href="#" button class="btn btn-secondary dropdown-toggle" id="dropdownMenu5" data-toggle="dropdown" aria-haspopup="true">Products</a><div class="dropdown-menu">
+          <li><a href="landing.php">Home</a></li>
+          <li class="dropdown"><a href="#" button class="btn btn-secondary dropdown-toggle" id="dropdownMenu5" data-toggle="dropdown" aria-haspopup="true" style="text-align:left">Products</a><div class="dropdown-menu">
           <a class="dropdown-item" href="#!">Google</a><br>
           <a class="dropdown-item" href="#!">Apple</a><br>
           <a class="dropdown-item" href="#!">Amazon</a><br>
@@ -67,20 +56,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           <li><a href="#">Contact</a></li>
         </ul>
         <div class="nav navbar-nav navbar-right">
-        <li class="dropdown"><a href="#" button class="btn btn-secondary dropsown-toggle" data-toggle="dropdown" aria-haspopup="true" style="text-align:left"><span class="glyphicon glyphicon-user"></span> Account</a>
-        <div class="dropdown-menu">
-        <a class="dropdown-item" href="reset-password.php">Reset Password</a><br>
-        </div></li>
+        <li><a href="login.php"><span class="glyphicon glyphicon-user"></span> Login</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-        <li><a href="logout.php"><span class="glyphicon glyphicon-pencil"></span> Logout</a></li>';
+        <li><a href="register.php"><span class="glyphicon glyphicon-pencil"></span> Sign Up</a></li>';
         </div>
       </div>
     </div>
   </nav>
-    <div class="page-header text-center" >
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
-    </div>
-    <div class="container">
+  <div class="container">
       <div class="row">
         <div class="col-sm-4">
           <div class="panel panel-primary">
@@ -105,17 +88,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
       </div>
     </div><br><br>
-    <p>
-        <!--<a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
-        <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
-        -->
-    </p>
-    <footer class="container-fluid text-center">
+  <footer class="container-fluid text-center">
       <p>Online Store Copyright</p>  
       <form class="form-inline">Get deals:
         <input type="email" class="form-control" size="50" placeholder="Email Address">
         <button type="button" class="btn btn-danger">Sign Up</button>
       </form>
-    </footer> 
+    </footer>      
 </body>
 </html>
