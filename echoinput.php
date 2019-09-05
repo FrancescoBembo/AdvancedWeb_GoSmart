@@ -12,27 +12,10 @@ $db = mysqli_connect("localhost", "id10588493_admin", "123456", "id10588493_gosm
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <style>
-      /* Remove the navbar default rounded borders and increase the bottom margin */
-      .navbar {
-        margin-bottom: 50px;
-        border-radius: 0;
-      }
-      /* Remove the jumbotron default bottom margin */
-       .jumbotron {
-        margin-bottom: 0;
-      }
-      /* Add a gray background color and some padding to the footer */
-      footer {
-        background-color: #f2f2f2;
-        padding: 100px;
-      }
-      
-      
-
-    </style>
+    <script src="../js/imagezoom.js"></script>
   </head>
   <body>
 <header>
@@ -83,7 +66,7 @@ $db = mysqli_connect("localhost", "id10588493_admin", "123456", "id10588493_gosm
             <a class="dropdown-item" href="reset-password.php">Reset Password</a><br>
             </div></li>
             <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-            <li><a href="logout.php"><span class="glyphicon glyphicon-pencil"></span> Logout</a></li>';
+            <li><a href="logout.php"><span class="glyphicon glyphicon-off"></span> Logout</a></li>';
             
         } else {
             echo '<li><a href="login.php"><span class="glyphicon glyphicon-user"></span> Login</a></li>
@@ -103,8 +86,15 @@ $db = mysqli_connect("localhost", "id10588493_admin", "123456", "id10588493_gosm
               $sql = "SELECT * FROM amazon WHERE image_id = 5";
               $result = mysqli_query($db, $sql);
               $row = mysqli_fetch_array($result);
-              echo "<img src='".$row["image"]."' class='img-responsive' style='width:40%' alt='Image'>";
+              //echo "<img src='".$row["image"]."' class='img-responsive' style='width:40%' alt='Image'>";
+              echo '<div class="img-zoom-container">
+                      <img id="amazonechoinput" src="'.$row["image"].'" style="width:30%" height="40%">
+                      <div id="myresult" class="img-zoom-result"></div>
+                    </div>';
               ?>
+              <script>
+              imageZoom("amazonechoinput","myresult");
+              </script>
         </div>
         <div class="col">
             <h1>Amazon Echo Input</h1>
@@ -118,6 +108,9 @@ $db = mysqli_connect("localhost", "id10588493_admin", "123456", "id10588493_gosm
         echo "".$row["p_des"]."";
         ?>
     </div>
+    <div class="col">
+            <button style='float:right;'  class='btn btn-default add_product' pid='$prod_id' id='$prod_id'>Add to cart</button>
+        </div>
  </div><br><br>
   <footer class="container-fluid text-center">
       <p>Online Store Copyright</p>  
